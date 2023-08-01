@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c3wposd55yhkp"]
+
+[ext_resource type="Shader" path="res://CubeShader.gdshader" id="1_glevn"]
+
+[sub_resource type="Gradient" id="Gradient_07b6n"]
+offsets = PackedFloat32Array(0.335664, 0.832168)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kcuo6"]
+frequency = 0.02
+fractal_type = 2
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_repwx"]
+width = 128
+height = 128
+depth = 128
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_07b6n")
+noise = SubResource("FastNoiseLite_kcuo6")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_glevn")
+shader_parameter/noise = SubResource("NoiseTexture3D_repwx")
