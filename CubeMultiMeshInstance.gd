@@ -1,7 +1,7 @@
 @tool
 extends MultiMeshInstance3D
 
-# Called when the node enters the scene tree for the first time.
+# It's not a good idea but who cares lol
 func _ready():
 	return
 	var row_length = pow(multimesh.instance_count, 1/3);
@@ -13,8 +13,3 @@ func _ready():
 			i%100
 			))
 		multimesh.set_instance_transform(i, position)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
